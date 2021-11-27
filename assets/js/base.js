@@ -1,7 +1,8 @@
 //Ejercicio 1
+/*
 let word = prompt('Favor de poner la palabra a transformar').toLowerCase()
 alert(word[0].toUpperCase() + word.slice(1,word.length))
-
+*/
 //ejercicio 2
 let sentence = prompt("Por favor poner una palabra con espacios").trim().toLowerCase();
 
@@ -16,6 +17,7 @@ for (i = 0; i <= sentence.length - 1; i++) {
 console.log(newSentence);
 
 //ejercicio 3
+/*
 let subjects = parseInt(prompt("Favor de indicar cuantas materias tiene"));
 let totalFinal = 0,cal = 0;
 for (i = 1; i <= subjects; i++) {
@@ -24,3 +26,4 @@ for (i = 1; i <= subjects; i++) {
 }
 console.log(`La calificacion final es de ${totalFinal / subjects}`);
 
+*/
