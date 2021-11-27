@@ -39,4 +39,8 @@ let i, result = 0
     console.log(`la palabra ${word} no es un palindromo`)
   }
 
-  
+  let counterMulti = 0
+for(i = 1; i <= 100; i++){
+    i % 3 === 0 || i % 5 === 0 ? counterMulti += i : ''
+}
+console.log(counterMulti)
