@@ -30,17 +30,18 @@ if (wordUser != "") {
     : console.log(`La palabra "${wordUser}" No es un palindromo`);
 } else {
   console.log("Inserta una palabra valida");
-}
+}*/
 // Homework
 // 2. While solution
 // 1. permitir acentos
 //
- wordUser = prompt("Dame una palabra ").trim().toLowerCase();
+/*
+wordUser = prompt("Dame una palabra ").trim().toLowerCase();
 
- wordWithoutSpace = "";
- wordReversed = "";
- i = 0;
-if (wordUser != " "  ) {
+wordWithoutSpace = "";
+wordReversed = "";
+i = 0;
+if (wordUser != " ") {
   while (i <= wordUser.length - 1) {
     if (wordUser[i] != " ") {
       wordWithoutSpace += wordUser[i];
@@ -50,9 +51,8 @@ if (wordUser != " "  ) {
   console.log(wordWithoutSpace);
   i = wordWithoutSpace.length - 1;
   while (i >= 0) {
-    if (wordWithoutSpace[i] != " ") {
-      wordReversed += wordWithoutSpace[i];
-    }
+    wordReversed += wordWithoutSpace[i];
+
     i--;
   }
   console.log(wordReversed);
@@ -63,23 +63,19 @@ if (wordUser != " "  ) {
   console.log("Inserta una palabra valida");
 }
 */
-
 // Imprimir en consola la suma de los multiplos de 3 y 5 contenidos entre el 1 y 100
 // -> 233168
 
 let i = 1;
 let result1 = 0;
-let result2 = 0;
-let total = 0;
+//let result2 = 0;
+//let total = 0;
 while (i <= 100) {
- if (i % 3 == 0) {
+ if (i % 3 == 0 || i % 5 == 0) {
      result1 += i
      console.log(`Este es el resultado ${result1}`)
- }else if (i % 5 == 0){
-     result2 += i
-     console.log(`Este es el resultado ${result2}`)
- }
    i++;
 }
-console.log(`Este es el total ${result1 + result2}`)
+console.log(`Este es el total ${result1}`)
+
 
