@@ -98,4 +98,3 @@ function sumMultiples () {
        return result
    }
    console.log (`La suma de los multiplos de 3 y 5 entre 1 y 100 es ${sumMultiples()}`)
-   */
