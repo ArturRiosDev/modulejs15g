@@ -78,6 +78,7 @@ function palindrome(aString) {
 }
 
 //ejercicio 4
+/*
 function sumTotalOfNumbers() {
   let wordtonumber = prompt("Favor de poner un numero");
   let total = 0;
@@ -86,6 +87,7 @@ function sumTotalOfNumbers() {
   }
   console.log(total);
 }
+*/
 
 //5
 /*

@@ -39,15 +39,14 @@ function sumTotalOfNumbers(a = "1234") {
 
 //ejercicio 4
 
-function totalSumOfMultipleNumbers(a = 3 , b = 5) {
-    let i = 1;
-    let result1 = 0;
-while (i <= 100) {
- if (i % a == 0 || i % b == 0) {
-     result1 += i
-     console.log(`Este es el resultado ${result1}`)
-   i++;
-}
-console.log(`Este es el total ${result1}`)
-}
+function totalSumOfMultipleNumbers(a = 3, b = 5) {
+  let i = 1;
+  let result1 = 0;
+  while (i <= 100) {
+    if (i % a == 0 || i % b == 0) {
+      result1 += i;
+    }
+    i++;
+  }
+  console.log(`Este es el total ${result1}`);
 }
