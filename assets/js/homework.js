@@ -63,3 +63,16 @@ for ( i = 0;  i< arr.length; i++) {
  * arrayReduce([1,2,3,4],[1,2,5]).
  * -> [1,2]
  */
+const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2, 5]) => {
+  const newArray = a.concat(b);
+  let validate =''
+  for (i= 0; i < newArray.length; i++) {
+      validate = newArray[i]
+    for (j = 0; index < array.length; index++) {
+      
+      
+    }
+    
+    
+  }
+}
