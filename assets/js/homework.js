@@ -64,15 +64,15 @@ for ( i = 0;  i< arr.length; i++) {
  * -> [1,2]
  */
 const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2, 5]) => {
-  const newArray = a.concat(b);
-  let validate =''
-  for (i= 0; i < newArray.length; i++) {
-      validate = newArray[i]
-    for (j = 0; index < array.length; index++) {
-      
-      
+  let newArray = a.concat(b);
+  let duplicated = [];
+  let tempArray = [...newArray].sort();
+  for (let i = 0; i < tempArray.length; i++) {
+    if (tempArray[i + 1] === tempArray[i]) {
+      duplicated.push(tempArray[i]);
     }
-    
-    
   }
-}
+  return duplicated
+};
+
+console.log(arrayReduce())
