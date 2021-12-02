@@ -9,7 +9,7 @@ for ( i = 0;  i< arr.length; i++) {
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
  * hint: https://www.w3schools.com/jsref/jsref_join.asp
  */
-/*  const inverter = (a = ['esta','es','una','oracion']) => a.reverse().join(' ')
+/*  const inverter = (a = ['esta','es','una','oracion']) => a.split('').reverse().join(' ')
  */
 
 /**
@@ -47,7 +47,7 @@ for ( i = 0;  i< arr.length; i++) {
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  *
  */
-/* const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2]) => {
+const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2]) => {
   const newArray = a.concat(b);
   let total = 0
   newArray.forEach(function(arrnum) {
@@ -55,7 +55,7 @@ for ( i = 0;  i< arr.length; i++) {
   })
   console.log(`Este es el total ${total}`)
 }
- */
+
 
 /**
  * Escribir una función que tome como parametro 2 arrays, y devuelva un array
