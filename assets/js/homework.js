@@ -63,7 +63,7 @@ for ( i = 0;  i< arr.length; i++) {
  * arrayReduce([1,2,3,4],[1,2,5]).
  * -> [1,2]
  */
-const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2, 5]) => {
+/* const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2, 5]) => {
   let newArray = a.concat(b);
   let duplicated = [];
   let tempArray = [...newArray].sort();
@@ -74,5 +74,4 @@ const arrayReduce = (a = [1, 2, 3, 4], b = [1, 2, 5]) => {
   }
   return duplicated
 };
-
-console.log(arrayReduce())
+ */
