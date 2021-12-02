@@ -6,7 +6,7 @@
 // Aplicar el metodo .forEach()
 // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
-/* const onlyEvenValues = arrNumbers => {
+const onlyEvenValues = arrNumbers => {
     let newArray = []
     arrNumbers.forEach(element => {
         if (element % 2 === 0) {
@@ -17,7 +17,7 @@
 }
 
 console.log(onlyEvenValues([1,2,3,4]))
- */
+
 
 // 2. function que reciba como parametro una array de strings
 // y devuelva la primer y ultima letra del string
@@ -26,7 +26,7 @@ console.log(onlyEvenValues([1,2,3,4]))
 // -> ['ha', 'mo']
 // .forEach() o .map()
 
-/* const firstAndLast = (arrStrings) => {
+const firstAndLast = (arrStrings) => {
   let newArray = [];
   arrStrings.map((element) => {
     let i = element.length - 1 
@@ -35,7 +35,7 @@ console.log(onlyEvenValues([1,2,3,4]))
   return newArray;
 };
 console.log(firstAndLast(["hola", "mundo"]));
- */
+
 /**
  * 3. Funcion que reciba un array de numeros
  * y devuelva el promedio
@@ -43,7 +43,7 @@ console.log(firstAndLast(["hola", "mundo"]));
  * -> 8.5
  */
 
-/* const getAverage = (arr) => {
+const getAverage = (arr) => {
     let sum =0, total = 0, totalNumbers = 0
     arr.forEach(element => {
         sum += element
@@ -53,7 +53,7 @@ console.log(firstAndLast(["hola", "mundo"]));
     return total
 };
 console.log(getAverage([10, 8, 9, 7]))
- */
+
 //  4. funcion
 // dado un array de años, filtre los elementos
 // y devuelva un array con los años que son bisiesto
@@ -62,4 +62,16 @@ console.log(getAverage([10, 8, 9, 7]))
 // .forEach()
 // hint: https://docs.microsoft.com/es-es/office/troubleshoot/excel/determine-a-leap-year
 
-const convertLeapYear = (arr) => {};
+const convertLeapYear = (arr) => {
+  let years = [];
+  arr.forEach((element) => {
+    if (element % 4 === 0 && element % 100 === 0 && element % 400 === 0) {
+      years.push(element);
+    } else if (element % 4 === 0 && element % 100 != 0) {
+      years.push(element);
+    }
+  });
+  return years;
+};
+
+console.log(convertLeapYear([1990, 2000, 2001, 2020]));
