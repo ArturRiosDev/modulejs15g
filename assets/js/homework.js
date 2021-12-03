@@ -57,7 +57,7 @@ console.log(result); */
  * Salida -> ['Guadalajara', 'Caracas']
  */
 
-const filterStrings = (arr) => {
+/* const filterStrings = (arr) => {
   return arr
     .filter((str) => (typeof str === "string" ? str : ""))
     .map((cap) => (cap = `${cap[0].toUpperCase()}${cap.slice(1, cap.length)}`))
@@ -65,6 +65,14 @@ const filterStrings = (arr) => {
       return characters.length > 5 ? characters : "";
     }).filter(final => final.includes('a') && final.slice(3).includes('a'))
 }
-
-console.log(filterStrings(["guadalajara", 3, "caracas", "oslo", "brasil", 0]))
+ */
+const filterStrings = (arr) => {
+    return arr
+      .filter((str) => (typeof str === "string" ? str : ""))
+      .map((cap) => (cap = `${cap[0].toUpperCase()}${cap.slice(1, cap.length)}`))
+      .filter((characters) => {
+        return characters.length > 5 ? characters : "";
+      }).filter(final => final.slice(final.indexOf('a') + 1).includes('a') ? final : '')
+  }
+console.log(filterStrings(["guadalajara", 3, "caracas", "oslo", "brasil", 0, 'campana']))
 
