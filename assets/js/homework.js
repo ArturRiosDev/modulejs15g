@@ -43,17 +43,14 @@ console.log(firstAndLast(["hola", "mundo"]));
  * -> 8.5
  */
 
-const getAverage = (arr) => {
-    let sum =0, total = 0, totalNumbers = 0
-    arr.forEach(element => {
-        sum += element
-        totalNumbers += 1
-    });
-    total = (sum / totalNumbers)
-    return total
-};
-console.log(getAverage([10, 8, 9, 7]))
-
+/* const getAverage = (arr) => {
+    let sum =0,  totalNumbers = arr.length
+    arr.forEach(element =>  sum += element)
+    return sum / totalNumbers
+  };
+let result = getAverage([10, 8, 9, 7])
+console.log(result)
+ */
 //  4. funcion
 // dado un array de años, filtre los elementos
 // y devuelva un array con los años que son bisiesto
@@ -62,17 +59,14 @@ console.log(getAverage([10, 8, 9, 7]))
 // .forEach()
 // hint: https://docs.microsoft.com/es-es/office/troubleshoot/excel/determine-a-leap-year
 
-/* const convertLeapYear = (arr) => {
+const convertLeapYear = (arr) => {
   let years = [];
   arr.forEach((element) => {
-    if (element % 4 === 0 && element % 100 === 0 && element % 400 === 0) {
-      years.push(element);
-    } else if (element % 4 === 0 && element % 100 != 0) {
+    if (element % 4 === 0 && element % 100 === 0 && element % 400 === 0 || element % 4 === 0 && element % 100 != 0) {
       years.push(element);
     }
   });
   return years;
 };
-
-console.log(convertLeapYear([1990, 2000, 2001, 2020]));
- */
+let result1 = convertLeapYear([1990, 2000, 2001, 2020])
+console.log(result1);
