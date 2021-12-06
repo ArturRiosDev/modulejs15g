@@ -21,13 +21,7 @@ console.log(array) */
  * 
  */
 const additionMultiArr = (arr) =>{
-   return arr.map(val=>{
-        return val.reduce((acc,value)=>{
-                return acc += value
-        })
-    }).reduce((sum,total)=>{
-        return sum += total
-    })
+   return arr.map(val=>val.reduce((acc,value)=> acc += value)).reduce((sum,total)=>sum += total)
 }
 
 let array = additionMultiArr( [[1,2,3] , [1,3,2] , [3,2,1] ] )
