@@ -5,6 +5,13 @@
  * -> ['Ana','Ivan','Oscar']
 */
 
+/* const onlyNamesVowels = (arr) =>{
+    return arr.map(val =>`${val[0].toUpperCase()}${val.slice(1)}`).filter(val =>{
+        return val[0].includes('A') || val[0].includes('E') ||val[0].includes('I') ||val[0].includes('O') ||val[0].includes('U') 
+    })
+}
+let array = onlyNamesVowels(['jorge','ana','ivan','sergio','luis','oscar' ] )
+console.log(array) */
 
 /**
  * 
@@ -13,3 +20,15 @@
  * additionMultiArr(  [	[1,2,3] , [1,3,2] , [3,2,1] ] )
  * 
  */
+const additionMultiArr = (arr) =>{
+   return arr.map(val=>{
+        return val.reduce((acc,value)=>{
+                return acc += value
+        })
+    }).reduce((sum,total)=>{
+        return sum += total
+    })
+}
+
+let array = additionMultiArr( [[1,2,3] , [1,3,2] , [3,2,1] ] )
+console.log(array)
