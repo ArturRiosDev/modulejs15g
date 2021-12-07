@@ -18,6 +18,13 @@ let users = [
 //   }
 // hint: .reduce() o .forEach()
 
+/* const createObject = (arr) =>{
+   return arr.reduce((acc,val)=>{
+       return  ({...acc,[`${val.firstName} ${val.lastName}`]: val.role})
+   },{})    
+}
+console.log(createObject(users)) */
+
 
 // Ejercicio 2:
 //  tomando el array users,
@@ -29,10 +36,9 @@ let users = [
 //          { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
 //      ]
 // hint: .filter()
-const filterUserByRole = (arr, role) => {
+/* const filterUserByRole = (arr,role) =>arr.filter(role => role.role === 'Instructor')
 
-}
-
+console.log(filterUserByRole(users)) */
 
 // Ejercicio 3
 // tomando el siguiente array de objetos
@@ -54,3 +60,14 @@ let persons = [
     {name: 'Jeff', age: 30, voted: true},
     {name: 'Zack', age: 19, voted: false}
 ]
+
+const averageVote = (arr) =>{
+    let persons = 0, average = 0  
+      arr.filter(Voted => Voted.voted === true).forEach(element => {
+        persons++
+        average += element.age
+    });
+    return `El numero de personas que voto son ${persons} y el promedio es ${average / persons}`
+}
+
+console.log(averageVote(persons))
