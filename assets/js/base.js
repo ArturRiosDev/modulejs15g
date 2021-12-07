@@ -8,3 +8,7 @@ let newObject = {
 }
 
 //propiedades
+//KEy: valor
+//
+
+console.log(newObject.color)
