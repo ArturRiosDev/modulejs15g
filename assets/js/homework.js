@@ -93,5 +93,5 @@ console.log(makePairsWithMap({ a: 1, b: 2 })) */
 const splitString = (str) => {
 return str.split('')
 }
-let word = 'hola mundo'
-console.log(splitString(word))
+let word = ['hola mundo']
+console.log(splitString(...word))
