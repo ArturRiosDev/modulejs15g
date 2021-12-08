@@ -63,7 +63,7 @@ const sumarSalarios = (obj) => {
 }
 
 
-// console.log(sumarSalarios(salarios))
+console.log(sumarSalarios(salarios))
 
 
 const sumarSalariosRed = (obj) => {

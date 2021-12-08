@@ -20,6 +20,13 @@
     avatar: "https://picsum.photos/200/300"
 }
 
+let newKoder = Object.keys(koder).reduce((acc,val)=>{
+    
+},{})
+
+
+
+
 /**
  * Ejercicio 2:
  * Escribir una funcion que reciba un parametro
