@@ -36,10 +36,10 @@ console.log(createObject(users)) */
 //          { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
 //      ]
 // hint: .filter()
-/* const filterUserByRole = (arr,role) =>arr.filter(role => role.role === 'Instructor')
+/* const filterUserByRole = (arr,role) =>arr.filter(user => user.role === role)
 
-console.log(filterUserByRole(users)) */
-
+console.log(filterUserByRole(users,'Full Stack Resident'))
+ */
 // Ejercicio 3
 // tomando el siguiente array de objetos
 // filtrar lo siguiente
@@ -62,12 +62,12 @@ let persons = [
 ]
 
 const averageVote = (arr) =>{
-    let persons = 0, average = 0  
-      arr.filter(Voted => Voted.voted === true).forEach(element => {
+    let persons = 0, total = 0  
+      arr.filter(user => user.voted === true).forEach(element => {
         persons++
-        average += element.age
+        total += element.age
     });
-    return `El numero de personas que voto son ${persons} y el promedio es ${average / persons}`
+    return `El numero de personas que voto son ${persons} y el promedio es ${total / persons}`
 }
 
 console.log(averageVote(persons))
