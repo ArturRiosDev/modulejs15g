@@ -20,11 +20,6 @@
     avatar: "https://picsum.photos/200/300"
 }
 
-let newKoder = Object.keys(koder).reduce((acc,val)=>{
-    
-},{})
-
-
 
 
 /**
@@ -49,9 +44,11 @@ let newKoder = Object.keys(koder).reduce((acc,val)=>{
  * 
  */
 
-const isAnObjectOrArray = (element) => {
-
+/* const isAnObjectOrArray = (element) => {
+      return Array.isArray(element) === true  ? `Es un Array` : typeof element === 'object' ? `Es un Objeto`: `No es un array ni un objeto`
 }
+
+console.log(isAnObjectOrArray({a:1})) */
 
 /**
  * Ejercicio 3.
@@ -68,9 +65,13 @@ const isAnObjectOrArray = (element) => {
  * 
  * Se tiene que realizar 2 soluciones, 1 con Object.entries() y otra con .map()
  */
-const makePairs = (object) => {
-    
-}
+/* const makePairs = (object) =>  Object.entries(object)
+const makePairsWithMap = (object) => Object.entries(object).map(val => val) 
+
+
+
+console.log(makePairs({ a: 1, b: 2 }))
+console.log(makePairsWithMap({ a: 1, b: 2 })) */
 
 
 /**
@@ -90,5 +91,7 @@ const makePairs = (object) => {
  */
 
 const splitString = (str) => {
-
+return str.split('')
 }
+let word = 'hola mundo'
+console.log(splitString(word))
