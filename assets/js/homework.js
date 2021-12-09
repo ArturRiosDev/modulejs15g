@@ -98,8 +98,8 @@ console.log(makePairsWithMap({ a: 1, b: 2 }))
  * 
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
-/* 
-const splitString = (str) => str.split('')
 
-let word = ['hola mundo']
-console.log(splitString(...word)) */
+const splitString = (str) => [...str]
+
+let word = 'hola mundo'
+console.log(splitString(word))
