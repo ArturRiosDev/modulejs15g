@@ -31,27 +31,7 @@ const changeObjects = (val) =>{
 console.log(changeObjects(koder))
 
 
-/* let users = [
-    { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
-    { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
-    { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
-    { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
-    { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
-    { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
-    { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
-]
 
-users.forEach((value, index, array) => {
-
-    let {
-        firstName, 
-        lastName, 
-        role
-    } = value
-
-    console.log(firstName, lastName, role)
-     console.log(value.firstName, value.lastName, value.role)
-}) */
 /**
  * Ejercicio 2:
  * Escribir una funcion que reciba un parametro
