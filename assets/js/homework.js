@@ -13,7 +13,7 @@
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 
- const koder = {
+/*  const koder = {
     languages: ["JavaScript", "Python", "Ruby"],
     isMentor: true,
     level: 3,
@@ -21,15 +21,14 @@
 }
 
 const changeObjects = (val) =>{
-    let newObject = {}
+    
      val.languages.push('Go'), val.level = 4,delete val.avatar, val.age = 30
-     console.log(`${val.languages}`)     
-    Object.assign(newObject,val)
+     console.log(`${val.languages}`)  
+     let newObject = {...val}   
     return newObject
 }
-
 console.log(changeObjects(koder))
-
+ */
 
 
 /**
@@ -75,13 +74,13 @@ console.log(isAnObjectOrArray({a:1})) */
  * 
  * Se tiene que realizar 2 soluciones, 1 con Object.entries() y otra con .map()
  */
-/* const makePairs = (object) =>  Object.entries(object)
-const makePairsWithMap = (object) => Object.entries(object).map(val => val) 
+const makePairs = (object) =>  Object.entries(object)
+const makePairsWithMap = (object) => Object.keys(object).map(val => [val,object[val]]) 
 
 
 
 console.log(makePairs({ a: 1, b: 2 }))
-console.log(makePairsWithMap({ a: 1, b: 2 })) */
+console.log(makePairsWithMap({ a: 1, b: 2 }))
 
 
 /**
