@@ -21,9 +21,11 @@
 }
 
 const changeObjects = (val) =>{
-     val.languages.push('Go')
-     val.level = 4
-    return val
+    let newObject = {}
+     val.languages.push('Go'), val.level = 4,delete val.avatar, val.age = 30
+     console.log(`${val.languages}`)     
+    Object.assign(newObject,val)
+    return newObject
 }
 
 console.log(changeObjects(koder))
