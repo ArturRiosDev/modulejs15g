@@ -57,12 +57,19 @@ let objPromesas = [
   },
 ];
 
-let newObjectPromesas = objPromesas.reduce((acc,val)=>{
-    console.log(val)
-    console.log(acc)
-    let key = 
-},{})
-console.log(newObjectPromesas)
+const newObjectPromesas = (arr) =>{
+    arr.map(val =>{
+        console.log(Object.values(val))
+        let card =  document.createElement('div'),  img = document.createElement('img'), par = document.createElement('p')
+        card.setAttribute('class','card'),img.setAttribute('src',Object.values(val)[0]),par.textContent = Object.values(val)[1]   
+        card.appendChild(img),card.appendChild(par) 
+        let container = document.createElement('div')
+        container.appendChild(card)
+        document.getElementsByTagName('body')[0].appendChild(container)
+    })
+}
+
+console.log(newObjectPromesas(objPromesas)) 
 
 /**
  *  Tarea 2
