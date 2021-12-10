@@ -1,5 +1,6 @@
 body {
   margin: 0%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu__booking {
@@ -11,10 +12,12 @@ body {
           justify-content: center;
   -webkit-box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin: 0%;
 }
 
 .menu__booking li {
-  margin: 0 1rem 1rem 0;
+  margin: 1rem 2rem 1rem 0;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
