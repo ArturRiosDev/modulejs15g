@@ -1,53 +1,107 @@
-// console.log(this)
-// console.log(this.alert)
+//**
+/* * Selecionar elementos
+ *
+ * 1. Selecionar por ID */
 
-let koder = {
-  name: "jorge",
-  lastName: "Camarillo",
-  age: 30,
-  average: [10, 10, 10, 8, 9],
-  getAverage: function () {
-    return this.average.reduce((acc, val) => acc += val,0) / this.average.length
+//  1. Selecionar por ID
+document.getElementById("head__title");
+document.getElementsByTagName("li");
+document.getElementsByClassName("link__menu");
+
+document.querySelector("#head__title");
+document.querySelector("li");
+document.querySelector(".link__menu");
+document.querySelectorAll(".link__menu");
+// document.querySelectorAll('')
+
+/**
+ * Obtener atributos
+ * Setear atributos
+ */
+
+// get
+/* let title = document.querySelector('#head__title').getAttribute('data-title')
+let level = document.querySelector('#head__title').getAttribute('data-level')
+
+// set
+document.querySelector('#head__title').setAttribute('data-custom','random')
+// reemplazando clases 
+document.querySelector('#head__title').setAttribute('class','trees cuatro')
+
+// Agregar clases
+document.querySelector('#head__title').classList.add('clase3')
+// remover clases
+document.querySelector('#head__title').classList.remove('clase2')
+
+// comprobar si existe un atributo
+document.querySelector('#head__title').hasAttribute('class') */
+
+// comprobar si el titulo tiene class
+/**
+ * Si si, comprobar
+ * ---si tiene la clase "clase1 clase2"
+ * ----- Agregar la "clase 3"
+ * ---sino
+ * ----- Agregar la clase "custom"
+ */
+
+//SOLUCION ORIGINAL
+document.querySelector('#head__title').hasAttribute('class') === true ? 
+  document.querySelector('#head__title').getAttribute('class') === 'clase1 clase2' ? document.querySelector('#head__title').classList.add('clase3'):      document.querySelector('#head__title').classList.add('custom') : ''
+
+/* if (document.querySelector("#head__title").hasAttribute("class") === true) {
+  if (
+    document.querySelector("#head__title").getAttribute("class") ===
+    "clase1 clase2"
+  ) {
+    document.querySelector("#head__title").classList.add("clase3");
+  } else {
+    document.querySelector("#head__title").classList.add("custom");
   }
-}
+} */
+
+// data attributes
+// propiedades personalizadas
+
+//Crear elementos
+/* createElement('tag')
+textContent()
+apendChild() */
+let uElement = document.createElement('ul')
+let liFirst = document.createElement('li')
+
+liFirst.textContent = 'item 1'
+uElement.appendChild(liFirst)
+
+let liSecond = document.createElement('li')
+
+liSecond.textContent = 'item 2'
+uElement.appendChild(liSecond)
+
+document.getElementsByTagName('body')[0].appendChild(uElement)
+
+let uElementEx = document.createElement('ul')
+let liHome = document.createElement('li')
+let liProducts = document.createElement('li')
+let liAboutUs = document.createElement('li')
+
+uElementEx.setAttribute('id','menu')
+uElementEx.setAttribute('class','menu')
+
+liHome.textContent = 'Home'
+liHome.setAttribute('class','menu')
+liProducts.textContent = 'Products'
+liProducts.setAttribute('class','menu')
+liAboutUs.textContent = 'About Us'
+liAboutUs.setAttribute('class','menu')
 
 
-// getFullName: function () {
-//     console.log(this)
-//     return `${ this.name } ${ this.lastName } ${this.age}`
-// }
 
-/* koder.getFullName = function () {
-  console.log(this);
-  return `${this.name} ${this.lastName} ${this.age}`;
-}; */
+uElementEx.appendChild(liHome)
+uElementEx.appendChild(liProducts)
+uElementEx.appendChild(liAboutUs)
 
-/* console.log(koder.getFullName()); */
-/* console.log(koder.getAverage()); */
-console.log(koder.getAverage())
-// -> 9.4
-koder.setAverage = function() {
-    this.total = this.getAverage()
-}
-// Agregar un metodo para calcular el IMC
-koder.setGetIMC = function () {
-   this.peso = 57 
-   this.altura = 1.50
-   this.IMC = this.peso/this.altura**2
-}
+//document.querySelector('#menu').setAttribute('class','menu')
 
-// Agregar un metodo para Agregar un nuevo promedio
-koder.setNewAve = function () {
-    this.average.push(10)
-}
 
-// Agregar un metodo para agregar una nueva propiedad 
-koder.addNewProperty = function (key,value) {
-    this[key] = value
-   
-}
-koder.setGetIMC()
-koder.addNewProperty('nationality','Mexican')
-koder.setNewAve()
-koder.setAverage()
-console.log(koder)
+document.getElementsByTagName('body')[0].appendChild(uElementEx)
