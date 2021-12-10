@@ -22,8 +22,10 @@ for (let i = 0; i < array.length; i++) {
   li.textContent = array[i];
   principalUl.appendChild(li);
 }
+let title =  document.createElement('h1')
+title.textContent = 'DOM manipulation'
 document.getElementsByTagName("body")[0].appendChild(principalUl);
-
+document.getElementsByTagName("body")[0].appendChild(title);
 /**
  * Ejercicio 2.
  * Dado el siguiente Array de objetos "objPromesas"
