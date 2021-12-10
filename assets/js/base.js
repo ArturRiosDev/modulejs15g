@@ -101,7 +101,6 @@ uElementEx.appendChild(liHome)
 uElementEx.appendChild(liProducts)
 uElementEx.appendChild(liAboutUs)
 
-//document.querySelector('#menu').setAttribute('class','menu')
 
 
 document.getElementsByTagName('body')[0].appendChild(uElementEx)
