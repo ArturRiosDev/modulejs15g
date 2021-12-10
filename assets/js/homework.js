@@ -79,7 +79,7 @@ const newObjectPromesas = (arr) =>{
         document.getElementsByTagName('body')[0].appendChild(card)
     })
 } 
-console.log(newObjectPromesas(objPromesas)) 
+newObjectPromesas(objPromesas)
 
 
 /**
