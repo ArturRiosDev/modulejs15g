@@ -1,6 +1,7 @@
 body {
   margin: 0%;
   background-color: rgba(0, 0, 0, 0.1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .menu__booking {
@@ -29,5 +30,17 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+  border-radius: 1rem;
 }
 /*# sourceMappingURL=Style.css.map */
