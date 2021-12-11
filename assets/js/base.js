@@ -1,13 +1,4 @@
-/**
- * Dado un array
- * ['colima', 'colombia','Estado de mexico']
- * 
- * EScuchar el evento keyup en un input
- * Filtrar del array las coincidencias
- * Pintar las coincidencias en una lista
- * 
- */
- const reverseUser = () =>  {
+const reverseUser = () =>  {
   let username = document.querySelector('#username').value
   let reversedUserName = username.split('').reverse().join('')
   document.querySelector('#usernamereversed').value = reversedUserName
@@ -19,7 +10,16 @@ const focusInInput = () => {
 const focusOutInput = () => {
   console.log('Focusout event input')
 }
-
+/**
+ * Dado un array
+ * ['colima', 'colombia','Estado de mexico']
+ * 
+ * EScuchar el evento keyup en un input
+ * Filtrar del array las coincidencias
+ * Pintar las coincidencias en una lista
+ * 
+ */
+ 
  let cities = ['colima', 'colombia','Estado de mexico']
 
  const filterCity = () => {
