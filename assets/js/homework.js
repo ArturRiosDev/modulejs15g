@@ -70,16 +70,20 @@ let objPromesas = [
         document.getElementsByTagName('body')[0].appendChild(container)
     })
 } */
+  let sec =  document.createElement('section')
 const newObjectPromesas = (arr) =>{
     arr.map(val =>{
         console.log(Object.values(val))
         let card =  document.createElement('div'),  img = document.createElement('img'), par = document.createElement('p')
         card.setAttribute('class','card'),img.setAttribute('src',Object.values(val)[0]),par.textContent = Object.values(val)[1]   
         card.appendChild(img),card.appendChild(par) 
-        document.getElementsByTagName('body')[0].appendChild(card)
+        sec.appendChild(card)
+        //document.getElementsByTagName('body')[0].appendChild(card)
     })
 } 
+document.getElementsByTagName('body')[0].appendChild(sec)
 newObjectPromesas(objPromesas)
+sec.classList.add('grid__service')
 
 
 /**
