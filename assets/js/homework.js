@@ -28,9 +28,9 @@ let koders = [
   
   //Filter by name
   const filterKoder = () => {
-    let selected = document.querySelector("#selection").value;
-    let koderSearch = document.querySelector("#name__koder").value;
-    let kodersFiltered = "";
+    let selected = document.querySelector("#selection").value, koderSearch = document.querySelector("#name__koder").value
+    let kodersFiltered = "" , list = ''
+    
     if (selected === "name" || selected === "city") {
       koderSearch = koderSearch.toLowerCase();
       kodersFiltered = koders.filter((koder) => {
@@ -47,7 +47,7 @@ let koders = [
         }
       });
     }
-    let list = "";
+    
     kodersFiltered.forEach((val) => {
       list += `<li>${val.name}</li>
               <li>${val.age}</li>
