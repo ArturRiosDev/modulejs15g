@@ -72,59 +72,31 @@ let koders = [
 //Filter by name
 const filterKoder = () => {
   let selected = document.querySelector("#selection").value;
-  //console.log(selected)
-  if (selected === "name") {
-    let koderSearch = document.querySelector("#name__koder").value;
+  let koderSearch = document.querySelector("#name__koder").value;
+  let kodersFiltered = "";
+  if (selected === "name" || selected === "city") {
     koderSearch = koderSearch.toLowerCase();
-    let kodersFiltered = koders.filter((koder) => {
+    kodersFiltered = koders.filter((koder) => {
       if (koder.name.toLowerCase().includes(koderSearch)) {
+        return koder;
+      } else if (koder.city.toLowerCase().includes(koderSearch)) {
         return koder;
       }
     });
-
-    let list = "";
-    kodersFiltered.forEach((val) => {
-      list += `<li>${val.name}</li>
-            <li>${val.age}</li>
-            <li>${val.city}</li>`;
-    });
-    document.querySelector("#listKoders").innerHTML = list;
-
-    //Filtered by age
   } else if (selected === "age") {
-    let koderSearch = document.querySelector("#name__koder").value;
-    let kodersFiltered = koders.filter((koder) => {
+    kodersFiltered = koders.filter((koder) => {
       if (koder.age.toString().includes(koderSearch)) {
         return koder;
       }
     });
-
-    let list = "";
-    kodersFiltered.forEach((val) => {
-      list += `<li>${val.name}</li>
-            <li>${val.age}</li>
-            <li>${val.city}</li>`;
-    });
-    document.querySelector("#listKoders").innerHTML = list;
-
-    //filtered by city
-  } else if (selected === "city") {
-    let koderSearch = document.querySelector("#name__koder").value;
-    koderSearch = koderSearch.toLowerCase();
-    let kodersFiltered = koders.filter((koder) => {
-      if (koder.city.toLowerCase().includes(koderSearch)) {
-        return koder;
-      }
-    });
-
-    let list = "";
-    kodersFiltered.forEach((val) => {
-      list += `<li>${val.name}</li>
-            <li>${val.age}</li>
-            <li>${val.city}</li>`;
-    });
-    document.querySelector("#listKoders").innerHTML = list;
   }
+  let list = "";
+  kodersFiltered.forEach((val) => {
+    list += `<li>${val.name}</li>
+            <li>${val.age}</li>
+            <li>${val.city}</li>`;
+  });
+  document.querySelector("#listKoders").innerHTML = list;
 };
 
 const multipleValidation = () => {
