@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
-    <link rel="stylesheet" href="CSS/Style.css">
 
+   <!--  <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> -->
 </head>
-<body>
+<body >
 
-  <!--   <h1 
-        class="otra"
+    <h1 
         id="head__title" 
         data-title="DOM" 
         data-level="4"
-    >DOM</h1>
-    <ul>
-        
-        <li>
-            <a href="" class="link__menu">
-                <span>menu 1</span>
-            </a>
-        </li>
-        <li>
-            <a href="" class="link__menu">
-                <span>menu 2</span>
-            </a>
-        </li>
+    >DOM manipulation</h1>
 
+
+
+
+    <p> Insert before()</p>
+    <ul id="menuInsertBefore">
+        <li id="beforeItem">Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+
+    <form action="">
+        <input type="text" id="username" placeholder="nombre original" onfocusin="focusInInput()" onfocusout="focusOutInput()">
+        <input type="text" id="usernamereversed" placeholder="nombre al reves" >
+        <button type="button" onclick="reverseUser()" >reversed!</button>
+    </form>
+
+
+    <input type="text" id="name__city" placeholder="Coloca una ciudad" onkeyup="filterCity()">
+    <ul id="listCity">
         
-    </ul> -->
-    <!-- HOMEWORK -->
+    </ul>
+
+
+    <input type="text" id="name__koder" placeholder="Coloca un nombre" onkeyup="filterKoder()">
+    <ul id="listKoders">
+
+    </ul>
     
 
-    <script src="/assets/js/homework.js"></script>
+
+
+    <script src="/assets/js/base.js"></script>
     <!-- <script src="/assets/js/is_largest.js"></script> -->
 
 </body>
