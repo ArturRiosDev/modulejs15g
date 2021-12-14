@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,26 +40,25 @@
 
     <form action="" class="form__filter">
 
-        <select name="" id="orderFilter" onchange="filterKoders()">
+        <select name="" id="orderFilter" >
             <option value="desc">Descendente</option>
             <option value="asc">Ascendente</option>
         </select>
 
-        <select name="" id="filterby" onchange="changeFilter()">
+        <select name="" id="filterby" >
             <option value="name">Nombre</option>
             <option value="age">Edad</option>
             <option value="city">Ciudad</option>
         </select>
         <input type="text" id="name__koder" 
-        placeholder="Coloca un nombre" 
-        onkeyup="filterKoder()">
+        placeholder="Coloca un nombre">
         <ul id="listKoders">
             
         </ul>
     </form>
-    
+    <button id="button__eventListener">Presiona aqui</button>
 
-    <script src="/assets/js/base.js"></script>
+    <script src="/assets/js/homework.js"></script>
     <!-- <script src="/assets/js/is_largest.js"></script> -->
 
 </body>
