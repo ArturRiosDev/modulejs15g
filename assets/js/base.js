@@ -1,175 +1,135 @@
+// ejercicio
+// Agregar a 5 koders mas
+// pintarlos en el DOM
+// 1. utilizar bootstrap
+// 2. Que sea responsive
+// 3. minimo 3 cards por row
+
+let koders = [
+    {
+        name: 'Emilio',
+        age: 30,
+        city: 'Guadalajara',
+        generacion: 6,
+        typeKoder: 'javascript',
+        gender: 'Masculino',
+        avatar: 'https://picsum.photos/200/205'
+    },
+    {
+        name: 'Juan',
+        age: 30,
+        city: 'Ciudad de méxico',
+        generacion: 6,
+        typeKoder: 'iOS',
+        gender: 'Masculino',
+        avatar: 'https://picsum.photos/200/208'
+    },
+    {
+        name: 'Laura',
+        age: 30,
+        city: 'Ciudad de méxico',
+        generacion: 10,
+        typeKoder: 'Python',
+        gender: 'Femenino',
+        avatar: 'https://picsum.photos/200/209'
+    },
+    {
+        name: 'Arturo',
+        age: 25,
+        city: 'Puerto Vallarta',
+        generacion: 10,
+        typeKoder: 'iOS',
+        gender: 'Masculino',
+        avatar: 'https://picsum.photos/200/210'
+    },
+    {
+        name: 'Jose',
+        age: 25,
+        city: 'Puerto Vallarta',
+        generacion: 10,
+        typeKoder: 'Android',
+        gender: 'Masculino',
+        avatar: 'https://picsum.photos/200/211'
+    },
+    {
+        name: 'juanita',
+        age: 25,
+        city: 'Puerto Vallarta',
+        generacion: 8,
+        typeKoder: 'iOS',
+        gender: 'Femenino',
+        avatar: 'https://picsum.photos/200/215'
+    }
+
+]
+
+const prinKoders = () =>{
+    console.log('corriendo')
+    layoutkoders = ''
+    koders.forEach((val)=>{
+        layoutkoders+=`
+        <div class='col-md-4 my-3'>
+        <div class="card" style="width: 18rem;">
+                    <img src="${val.avatar}" class="card-img-top p-4" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Nombre : ${val.name}</h5>
+                      <p class="card-text">Edad : ${val.age}</p>
+                      <ul>
+                      <li>Ciudad: ${val.city}</li>
+                      <li>Generacion : ${val.generacion}</li>
+                      <li>Bootcamp: ${val.typeKoder}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  </div>         
+        `
+    })
+    document.querySelector('#koders__list').innerHTML = layoutkoders
+}
+
+/* let buttonCreation = document.querySelector('#button__creator')
+buttonCreation.addEventListener('click',()=>{
+    prinKoders()
+}) */
+
+window.onload = prinKoders()
+
 /**
- * Dado un array
- * ['colima', 'colombia','Estado de mexico']
+ * Browser Object Model
+ * Como JS se comunica con el navegador
  * 
- * EScuchar el evento keyup en un input
- * Filtrar del array las coincidencias
- * Pintar las coincidencias en una lista
+ * window:
+ * window.innerHeight
+ * window.innerWidth
  * 
+ * location
+ * window.location.href
+ * window.location.hostname
+ * window.location.pathname
+ * window.location.protocol
+ * 
+ * Navigator
+ * window.navigator.appName
+ * window.navigator.appCodeName
+ * window.navigator.platform
+ * 
+ * History
+ * window.history.back()
+ * window.history.forward()
+ * 
+ * Alert
+ * window.alert()
  */
-
- let cities = ['colima', 'colombia','Estado de mexico']
-
- const filterCity = () => {
-     // filtrar ciudades
-     let citySearch = document.querySelector('#name__city').value
-     let citiesFiltered = cities.filter( (city) => {
-         if(city.includes(citySearch) === true){
-             return city
-         }
-     })
- 
-     // creo el layout con las ciudades filtradas
-     let lista = ''
-     citiesFiltered.forEach( (value) => {
-         lista += `<li>${value}</li>`
-     })
- 
-     // agrego el layout
-     document.querySelector('#listCity').innerHTML = lista
- }
- 
- 
- 
- let koders = [
-     {
-         name: 'Emilio',
-         age: 30,
-         city: 'Guadalajara'
-     },
-     {
-         name: 'Pedro',
-         age: 30,
-         city: 'Leon'
-     },
-     {
-         name: 'Brisset',
-         age: 37,
-         city: 'Lima'
-     },
-     {
-         name: 'alex',
-         age: 37,
-         city: 'Lima'
-     },
-     {
-         name: 'Brisset',
-         age: 37,
-         city: 'Lima'
-     }
- ]
- 
- 
- const orderArray = (arr) => {
-     let copyArray = [...arr]
-     let order = document.querySelector('#orderFilter').value
-     let KoderTerm = document.querySelector('#filterby').value
-     if(KoderTerm !== 'age'){
-         if(order == 'asc') {
-             copyArray.sort(function (firstEl, secondEl) {
-                 let a = firstEl[KoderTerm].toUpperCase(),
-                 b = secondEl[KoderTerm].toUpperCase();
-                 //return a == b ? 0 : a > b ? 1 : -1
-                 if(a > b) {
-                     return 1
-                 } 
-                 if (a < b) {
-                     return -1
-                 }
-                 if(a == b){
-                     return 0
-                 }
-             })
-         } else {
-             console.log(KoderTerm)
-             copyArray.sort(function (firstEl, secondEl) {
-                 let a = firstEl[KoderTerm].toUpperCase(),
-                 b = secondEl[KoderTerm].toUpperCase();
-                 // return b == a ? 0 : b > a ? 1 : -1;
-                 if(b > a) {
-                     return 1
-                 } 
-                 if (b < a) {
-                     return -1
-                 }
-                 if(b == a){
-                     return 0
-                 }
-             })
-         }
-     } else {
-         if(order == 'asc'){
-             copyArray.sort( function ( a, b ) { 
-                 return a[KoderTerm] - b[KoderTerm]
-             }) 
-         } else {
-             copyArray.sort( function ( a, b ) {
-                 console.log(a,b) 
-                 return b[KoderTerm] - a[KoderTerm]
-             })
-         }
-     }
- 
-     return copyArray
-     
- }
- 
- // FUncion => tarea especifica
- const filterKoders = () => {
-     // filtrar ciudades
-     let KoderSearch = document.querySelector('#name__koder').value.toLowerCase()
-     let KoderTerm = document.querySelector('#filterby').value.toLowerCase()
- 
-     let kodersFiltered = koders.filter( (koder) => {        
-         let koderTerm = typeof koder[KoderTerm] !== 'number' ? koder[KoderTerm].toLowerCase() : koder[KoderTerm]
- 
-         if(KoderTerm === 'age') {
-             if((koderTerm).toString().includes(KoderSearch) === true){
-                 return koder
-             }
-         } else  {
-             if(koderTerm.includes(KoderSearch) === true){
-                 return koder
-             }
-         }
-     })
- 
-     // console.log(kodersFiltered)
-     console.log('koders filtrados')
-     console.log(kodersFiltered)
- 
-     let kodersFilteredOrdered = orderArray(kodersFiltered)
-     console.log('koders filtrados y ordenados')
-     console.log(kodersFilteredOrdered)
- 
-     // creo el layout con las ciudades filtradas
-     let lista = ''
-     kodersFilteredOrdered.forEach( (koder) => {
-         lista += `
-             <li>
-                 <strong>${koder.name}</strong>
-                 <span>${koder.age} años</span>
-                 <span>${koder.city}</span>
-             </li>
-         `
-     })
- 
-     // agrego el layout
-     document.querySelector('#listKoders').innerHTML = lista
- }
- 
+let nextPAge = document.getElementById('next')
+let prevPage = document.getElementById('prev')
+const next = ()=>{
+    window.history.forward()
+}
+nextPAge.addEventListener('click',next)
 
 
- 
- const orderFilter = () => {
-     filterKoders()
- }
- 
- const filterKoder = () => {
-     filterKoders()
- }
- 
- const changeFilter = () => {
-     filterKoders()
- }
- 
+const prevp = ()=>{
+    window.history.back()
+}
+prevPage.addEventListener('click',prevp)
+
