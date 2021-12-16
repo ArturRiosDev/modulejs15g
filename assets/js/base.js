@@ -1,6 +1,6 @@
 //PROMESAS
 // const myPromise = new Promise();
-/* const myPromise = new Promise((resolve, reject) => {  
+const myPromise = new Promise((resolve, reject) => {  
     // condition
     let condition = true  
     if(condition == true) {    
@@ -14,7 +14,7 @@
 myPromise.then((response)=> {
     console.log(typeof response)
     console.log(response)
-}) */
+})
 
 
 /**
