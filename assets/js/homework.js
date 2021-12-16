@@ -1,49 +1,46 @@
 /**
- * 
+ *
  * Tarea 1
  * Estudiar promesas JS
  * Esdutiar el api fetch
  * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
- * 
+ *
  */
 
 /**
  * Tarea 2
  * Metodos (verbos http)
  * GET
- * 
+ *
  * POST, PUT, PATCH, DELETE
  */
-
 
 /**
  * Tarea 3
  * Crear una cuenta en firebase
  */
 
-
 /**
- * 
+ *
  * Tarea 4
- * Generar un grid de todos los usuarios 
+ * Generar un grid de todos los usuarios
  * https://jsonplaceholder.typicode.com/users
- * 
+ *
  */
- const getData = (url, callback) => {
-    const xhttp = new XMLHttpRequest()
-    xhttp.open( "GET" , url, true)
+const getData = (url, callback) => {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", url, true);
 
-    xhttp.onload = function(data) {
-        if(data.target.status === 200) {
-            let objResp = JSON.parse(data.target.response)
-            // callback
-            callback(objResp)
-
-        }
+  xhttp.onload = function (data) {
+    if (data.target.status === 200) {
+      let objResp = JSON.parse(data.target.response);
+      // callback
+      callback(objResp);
     }
+  };
 
-    xhttp.send()
-}
+  xhttp.send();
+};
 
 /* const printCardPost = (post) => {
     console.log(post)
@@ -67,22 +64,32 @@
 }
  */
 const printCommentsPost = (arrComments) => {
+  let templateComments = "";
+  let newoj = "";
+  arrComments.forEach((comment) => {
 
-    let templateComments = ''
-    arrComments.forEach( (comment) => {
-        templateComments +=  `
+    templateComments += `
         <div class="col-12 col-md-4">
         <div class="card-body bg-light m-2 rounded">
           <h5 class="card-title">Username: ${comment.username}</h5>
           <h6 class="card-subtitle mb-2 text-muted">Email: ${comment.email}</h6>
           <p class="card-text">Website: ${comment.website}</p>
+          <div class="ctn__comments">
+                    <ul class="list-group list-group-flush list__comments">
+                    <li class="list-group-item">
+                    <strong> Company Name: </strong><p>${comment['company'].name}</p> 
+                     <p>Company Phrase : ${comment['company'].catchPhrase}</p>  
+                     </li>
+                    </ul>
+                </div>
         </div>
       </div>
-        `
-    })
-    console.log(templateComments)
-    document.querySelector('.grid__posts').innerHTML = templateComments
-}
+        `;
+  });
+  //console.log(templateComments)
+  document.querySelector(".grid__posts").innerHTML = templateComments;
+
+};
 
 /* getData('https://jsonplaceholder.typicode.com/posts/1', printCardPost) */
-getData('https://jsonplaceholder.typicode.com/users', printCommentsPost)
+getData("https://jsonplaceholder.typicode.com/users", printCommentsPost);
