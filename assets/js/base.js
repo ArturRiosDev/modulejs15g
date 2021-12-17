@@ -46,9 +46,9 @@ let objUpdatePost =  {
 }
 
 //updateUser(objUpdatePost, '-Mr55K9JfDNYwZC-GCsN')
-
+*/
 // DELETE Eliminar datos
-const deleteUser =  (idUser) => {
+/* const deleteUser =  (idUser) => {
     const xhttp = new XMLHttpRequest()
     xhttp.open( "DELETE" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idUser}.json`, true)
     xhttp.onload = function(data) {
@@ -57,16 +57,47 @@ const deleteUser =  (idUser) => {
         }
     }
     xhttp.send()
-}
+} */
 //deleteUser('-Mr55K9JfDNYwZC-GCsN')
- */
+ // let objNewPost =  {
+//     author: 'Jorge luis',
+//     title: 'foo',
+//     body: 'bar lorem',
+// }
+// ir por los datos del post
+
+/* window.addEventListener('load', () => {
+
+    const xhttp = new XMLHttpRequest()
+    let idPost = location.search.slice(8)
+    console.log(idPost)
+    xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
+    xhttp.onload = function(data) {
+        if(data.target.status === 200) {
+            let objResp = JSON.parse(data.target.response)
+            console.log(objResp)
+            // Llenar el formulario
+
+            document.querySelector('#title').value = objResp.title
+            document.querySelector('#author').value = objResp.author
+            document.querySelector('#timetoread').value = objResp.timetoread
+            document.querySelector('#resume').value = objResp.resume
+
+        }
+    }
+    xhttp.send()
+}) */
+
+
+
+
 // POST crear datos
 // POST crear datos
 const createUser = (objPost) => {
   const xhttp = new XMLHttpRequest();
   xhttp.open(
     "POST",
-    "https://arturdev-15g-default-rtdb.firebaseio.com/.json",
+    "https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json",
     true
   );
   xhttp.onload = function (data) {
@@ -101,15 +132,10 @@ send__post.addEventListener("click", () => {
       title,
       author,
       timetoread,
-      resume,
-    };
-
+      resume
+    }
+  
     createUser(objNewPost);
   }
 });
 
-// let objNewPost =  {
-//     author: 'Jorge luis',
-//     title: 'foo',
-//     body: 'bar lorem',
-// }
