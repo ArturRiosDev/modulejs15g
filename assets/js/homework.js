@@ -1,4 +1,4 @@
-let currentWindow = window.location.href;
+let currentWindow = window.location.href
 
 const createUser = (objPost) => {
   const xhttp = new XMLHttpRequest();
