@@ -1,4 +1,4 @@
-// POST crear datos
+// POST crear datos CON XHTPPR
 const createUser =  (objPost) => {
     const xhttp = new XMLHttpRequest()
     xhttp.open( "POST" , "https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json", true)

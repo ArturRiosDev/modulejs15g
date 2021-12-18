@@ -1,4 +1,4 @@
-// GET 
+// GET CON XHTTPR
 const getPosts =  (funcionALlamar) => {
     const xhttp = new XMLHttpRequest()
     xhttp.open( "GET" , `https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json`, true)
@@ -11,13 +11,21 @@ const getPosts =  (funcionALlamar) => {
     xhttp.send()
 }
 
+//FETCH PARA TRAER LOS POSTS
+const getPostsFetch = (callback) =>{
+    fetch(`https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json`)
+        .then((resp) =>{
+            return resp.json()
+        })
+        .then((obj)=>{
+            callback(obj)
+        })
+}
 const funcionCallback =  (posts) => {
     console.log(posts)
-    let parsedPosts = JSON.parse(posts)
-    console.log(parsedPosts)
     let layout = ''
-    for(post in parsedPosts) {
-        let { title, timetoread, resume, author } = parsedPosts[post]
+    for(post in posts) {
+        let { title, timetoread, resume, author } = posts[post]
         layout += `
         <div class="col-12 col-md-4 mb-4">
             <div class="card text-dark bg-light">
@@ -38,4 +46,5 @@ const funcionCallback =  (posts) => {
     
 }
 
-getPosts(funcionCallback)
+//getPosts(funcionCallback)
+getPostsFetch(funcionCallback)
