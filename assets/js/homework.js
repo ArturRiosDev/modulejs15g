@@ -37,12 +37,14 @@ const createUser = (objPost) => {
 
         //console.log(objCards[key].author)
         templateCards+=`
+        <div class="col-12 col-md-4 mb-4">
         <div class="card bg-light" >
-        <div class="card-body">
+        <div class=" card-body">
             <h5 class="card-title">${objCards[key].author}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${objCards[key].resume}</h6>
             <p class="card-text">${objCards[key].title}</p>
         </div>
+    </div>
     </div>
         `
       }
