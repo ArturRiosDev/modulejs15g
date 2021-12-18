@@ -35,8 +35,7 @@ const createUser = (objPost) => {
       let templateCards = ''
       for (const key in objCards) {
 
-        console.log(objCards[key].author)
-
+        //console.log(objCards[key].author)
         templateCards+=`
         <div class="card bg-light" >
         <div class="card-body">
@@ -46,7 +45,6 @@ const createUser = (objPost) => {
         </div>
     </div>
         `
-
       }
       document.querySelector('.grid__cards').innerHTML = templateCards
     }
