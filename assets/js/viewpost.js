@@ -1,10 +1,23 @@
+$(()=>{
+    console.log('ya')
+    let idPost = location.search.slice(8)
+    $.ajax({
+        method:'GET',
+        url: `https://arturdev-15g-default-rtdb.firebaseio.com/posts/${idPost}.json`
+    }).done((resp)=>{
+        $('.card-title').text(resp.title)
+        $('.card__author').text(resp.author)
+        $('.card__timetoread').text(resp.timetoread + ' min')
+        $('.card__resume').text(resp.resume)
+    })
 
+})
 
 // ir por los datos del post
-window.addEventListener('load', () => {
+/* window.addEventListener('load', () => {
     //View posts with fetch
     console.log('ready')
-    let idPost = location.search.slice(8)
+    //let idPost = location.search.slice(8)
     fetch(`https://arturdev-15g-default-rtdb.firebaseio.com/posts/${idPost}.json`)
         .then((resp)=>{
             return resp.json()
@@ -16,7 +29,7 @@ window.addEventListener('load', () => {
             document.querySelector('.card__resume').innerText = obj.resume
         })
     
-})
+}) */
 //view posts with xhttpr
 
 /* let idPost = location.search.slice(8)
