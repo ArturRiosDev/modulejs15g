@@ -1,5 +1,55 @@
+$(()=>{
+console.log('ya')
+
+    const createUserJquery = (objPost) =>{
+        $.ajax({
+            method:'POST',
+            url:'https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json',
+            data: JSON.stringify(objPost)
+        }).done((resp)=>{       
+            $('#title').val('')
+            $('#author').val('')
+            $('#timetoread').val('')
+            $('#resume').val('')
+            $('#post__id').text(resp.name)
+            $('#alert__response').removeClass('d-none')
+        })
+    }
+
+
+        $('#send__post').click(()=>{
+            let title = document.querySelector('#title').value
+            let author = document.querySelector('#author').value
+            let timetoread = document.querySelector('#timetoread').value
+            let resume = document.querySelector('#resume').value
+            if(
+                title !== '' &&
+                author !== '' &&  
+                timetoread !== '' &&
+                resume !== ''
+            ){
+
+                let objNewPost = {
+                    title: title,
+                    author: author,
+                    timetoread: timetoread,
+                    resume: resume
+                }
+            
+                // createUser(objNewPost)
+                //createUserFetch(objNewPost)
+                createUserJquery(objNewPost)
+
+            } else {
+                alert('Algunos datos estan vacios')
+            }
+        })
+
+
+})
+
 // POST crear datos CON XHTPPR
-const createUser =  (objPost) => {
+/* const createUser =  (objPost) => {
     const xhttp = new XMLHttpRequest()
     xhttp.open( "POST" , "https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json", true)
     xhttp.onload = function(data) {
@@ -15,9 +65,10 @@ const createUser =  (objPost) => {
         }
     }
     xhttp.send( JSON.stringify(objPost) )
-}
+} */
+
 //AQUI SE CREA UTILIZANDO FETCH
-const createUserFetch =  (objPost) => {
+/* const createUserFetch =  (objPost) => {
     fetch('https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json', {
         method:'POST',
         header: {
@@ -41,10 +92,9 @@ const createUserFetch =  (objPost) => {
     })
 
     
-}
+} */
 
-
-let send__post = document.querySelector('#send__post')
+/* let send__post = document.querySelector('#send__post')
 send__post.addEventListener('click', () => {
 
     let title = document.querySelector('#title').value
@@ -71,4 +121,4 @@ send__post.addEventListener('click', () => {
         alert('Algunos datos estan vacios')
     }
 
-})
+}) */

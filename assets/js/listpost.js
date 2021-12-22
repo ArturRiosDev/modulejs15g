@@ -1,3 +1,7 @@
+
+$(()=>{
+    console.log('ya cargo con jquery')
+
 // GET CON XHTTPR
 const getPosts =  (funcionALlamar) => {
     const xhttp = new XMLHttpRequest()
@@ -21,6 +25,20 @@ const getPostsFetch = (callback) =>{
             callback(obj)
         })
 }
+
+//GET CON jQuery
+const getPostJq = (callback) =>{
+$.ajax({
+    method:'GET',
+    url:`https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json`
+}).done((resp)=>{
+    callback(resp)
+}).fail((err) => {
+    console.log(err)
+})
+}
+
+
 const funcionCallback =  (posts) => {
     console.log(posts)
     let layout = ''
@@ -47,4 +65,7 @@ const funcionCallback =  (posts) => {
 }
 
 //getPosts(funcionCallback)
-getPostsFetch(funcionCallback)
+//getPostsFetch(funcionCallback)
+getPostJq(funcionCallback)
+
+})
