@@ -16,6 +16,17 @@ console.log('ya')
         })
     }
 
+    const createUserJqueryPost = (objPost) =>{
+        $.post('https://arturdev-15g-default-rtdb.firebaseio.com/posts/.json',JSON.stringify(objPost), (resp)=> {
+
+            $('#title').val('')
+            $('#author').val('')
+            $('#timetoread').val('')
+            $('#resume').val('')
+            $('#post__id').text(resp.name)
+            $('#alert__response').removeClass('d-none') 
+        })
+    }
 
         $('#send__post').click(()=>{
             let title = document.querySelector('#title').value
@@ -38,7 +49,8 @@ console.log('ya')
             
                 // createUser(objNewPost)
                 //createUserFetch(objNewPost)
-                createUserJquery(objNewPost)
+                //createUserJquery(objNewPost)
+                createUserJqueryPost(objNewPost)
 
             } else {
                 alert('Algunos datos estan vacios')
